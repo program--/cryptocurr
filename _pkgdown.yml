@@ -1,0 +1,17 @@
+title: "cryptocurr"
+url: https://github.com/program--/cryptocurr
+template:
+  params:
+    bootswatch: flatly
+reference:
+  - title: Cryptocurrency Historical Data
+    contents:
+      - '`get_status`'
+      - '`tickers`'
+navbar:
+  left:
+    - icon: fa-home
+      href: index.html
+    - icon: fa-file-code-o
+      text: "References"
+      href: reference/index.html
