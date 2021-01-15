@@ -1,17 +1,26 @@
 Package: cryptocurr
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Type: Package
+Title: R-based Cryptocurrency Platform API Wrapper
+Version: 0.0.1
 Authors@R: 
     person(given = "Justin",
            family = "Singh-Mohudpur",
            role = c("aut", "cre"),
            email = "justin@justinsingh.me")
-Description: What the package does (one paragraph).
+Maintainer: Justin Singh-M <justin@justinsingh.me>
+Description: An API wrapper in R for accessing Cryptocurrency exchange platforms.
+URL: https://github.com/program--/cryptocurr
+BugReports: https://github.com/program--/cryptocurr/issues
+Depends:
+    R (>= 4.0.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests:
+    testthat,
+    covr
 Imports: 
     httr,
     magrittr,
