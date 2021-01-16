@@ -12,3 +12,4 @@
 ^docs$
 ^codecov\.yml$
 ^package\.R$
+^CODE_OF_CONDUCT\.md$

@@ -47,3 +47,8 @@ library(cryptocurr)
 <img src="man/figures/cryptocurr-roadmap.png" alt="cryptocurr roadmap" align="center" />
 
 ## [Changelog](CHANGELOG.md)
+
+## Code of Conduct
+  
+Please note that the cryptocurr project is released with a [Contributor Code of Conduct](https://github.com/program--/cryptocurr/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
