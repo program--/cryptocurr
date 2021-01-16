@@ -44,4 +44,4 @@ library(cryptocurr)
 
 ## Roadmap
 
-<img src="man/figures/cryptocurr-roadmap.png" alt="cryptocurr roadmap" width=80% align="center" />
+<img src="man/figures/cryptocurr-roadmap.png" alt="cryptocurr roadmap" align="center" />
