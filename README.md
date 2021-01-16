@@ -42,3 +42,6 @@ library(cryptocurr)
 ## basic example code
 ```
 
+## Roadmap
+
+<img src="man/figures/cryptocurr-roadmap.png" alt="cryptocurr roadmap" width=80% align="center" />
