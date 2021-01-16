@@ -121,7 +121,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Retrieve Cryptocurrency Data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/program--/cryptocurr/blob/master/R/bitfinex.R'><code>R/bitfinex.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/program--/cryptocurr/blob/master/R/bitfinex-public.R'><code>R/bitfinex-public.R</code></a></small>
     <div class="hidden name"><code>tickers.Rd</code></div>
     </div>
 
@@ -129,16 +129,16 @@
     <p>Calls the Bitfinex API to retrieve cryptocurrency data.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tickers</span><span class='op'>(</span>symbols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ALL"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>tickers</span><span class='op'>(</span>SYMBOLS <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ALL"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>symbols</th>
+      <th>SYMBOLS</th>
       <td><p>Character vector containing ticker symbols for
 cryptocurrencies, or <code>ALL</code> for all possible tickers.
-Must be appended with a <code>t</code> or <code>f</code> to specify
+Must be prepended with a <code>t</code> or <code>f</code> to specify
 trading or funding cryptocurrencies, respectively.</p></td>
     </tr>
     </table>
@@ -153,8 +153,9 @@ trading or funding cryptocurrencies, respectively.</p></td>
 <h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a><code>tibble</code> descriptions:</h3>
 
 <ul>
-<li><p><code>SYMBOL</code>: The symbol of the requested ticker data</p></li>
-<li><p><code>FRR</code>: Flash Return Rate - average of all fixed rate funding over the last hour <em>(funding tickers only)</em></p></li>
+<li><p><code>SYMBOL</code>: The symbol/ticker of the requested data</p></li>
+<li><p><code>FRR</code>: Flash Return Rate - average of all fixed rate funding over
+the last hour <em>(funding tickers only)</em></p></li>
 <li><p><code>BID</code>: Price of last highest bid</p></li>
 <li><p><code>BID_PERIOD</code>: Bid period covered in days <em>(funding tickers only)</em></p></li>
 <li><p><code>BID_SIZE</code>: Sum of the 25 highest bid sizes</p></li>
@@ -162,12 +163,14 @@ trading or funding cryptocurrencies, respectively.</p></td>
 <li><p><code>ASK_PERIOD</code>: Ask period covered in days <em>(funding tickers only)</em></p></li>
 <li><p><code>ASK_SIZE</code>: Sum of the 25 lowest ask sizes</p></li>
 <li><p><code>DAILY_CHANGE</code>: Amount that the last price has changed since yesterday</p></li>
-<li><p><code>DAILY_CHANGE_RELATIVE</code>: Relative price change since yesterday (*100 for percentage change)</p></li>
+<li><p><code>DAILY_CHANGE_RELATIVE</code>: Relative price change since yesterday
+(*100 for percentage change)</p></li>
 <li><p><code>LAST_PRICE</code>: Price of the last trade</p></li>
 <li><p><code>VOLUME</code>: Daily volume</p></li>
 <li><p><code>HIGH</code>: Daily high</p></li>
 <li><p><code>LOW</code>: Daily low</p></li>
-<li><p><code>FRR_AMOUNT_AVAILABLE</code>: The amount of funding that is available at the Flash Return Rate <em>(funding tickers only)</em></p></li>
+<li><p><code>FRR_AMOUNT_AVAILABLE</code>: The amount of funding that is available at
+the Flash Return Rate <em>(funding tickers only)</em></p></li>
 </ul>
 
 
@@ -175,12 +178,12 @@ trading or funding cryptocurrencies, respectively.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
     <span class='co'># Get Bitcoin and Litecoin info</span>
-    <span class='fu'>tickers</span><span class='op'>(</span>symbols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"tBTCUSD"</span>, <span class='st'>"tLTCUSD"</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='fu'>tickers</span><span class='op'>(</span>SYMBOLS <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"tBTCUSD"</span>, <span class='st'>"tLTCUSD"</span><span class='op'>)</span><span class='op'>)</span>
     <span class='co'># Returns $trading tibble with 2 rows</span>
     <span class='co'># and $funding tibble with 0 rows</span>
 
     <span class='co'># Get USD info</span>
-    <span class='fu'>tickers</span><span class='op'>(</span>symbols <span class='op'>=</span> <span class='st'>"USD"</span><span class='op'>)</span>
+    <span class='fu'>tickers</span><span class='op'>(</span>SYMBOLS <span class='op'>=</span> <span class='st'>"USD"</span><span class='op'>)</span>
     <span class='co'># Return $trading tibble with 0 rows</span>
     <span class='co'># and $funding tibble with 1 row</span>
 <span class='op'>}</span>

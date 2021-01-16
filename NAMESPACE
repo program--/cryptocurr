@@ -2,6 +2,11 @@
 
 export("%>%")
 export(get_status)
+export(set_names)
+export(ticker)
+export(ticker_history)
 export(tickers)
+export(trades)
 importFrom(magrittr,"%>%")
+importFrom(stats,setNames)
 importFrom(tibble,tibble)

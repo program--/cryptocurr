@@ -4,10 +4,13 @@ template:
   params:
     bootswatch: flatly
 reference:
-  - title: Cryptocurrency Historical Data
+  - title: Bitfinex
     contents:
       - '`get_status`'
       - '`tickers`'
+      - '`ticker`'
+      - '`ticker_history`'
+      - '`trades`'
 navbar:
   left:
     - icon: fa-home
