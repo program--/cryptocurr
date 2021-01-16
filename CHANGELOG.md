@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## Unreleased
 ### Planned
 - Bitfenix:
     * [Book](https://docs.bitfinex.com/reference#rest-public-book)
@@ -10,11 +10,8 @@
     * Calculation Endpoints
     * Authenticated Endpoints
 
-***
 
-***
-
-## [0.0.2] - 2021-01-16
+## 0.0.2 - 2021-01-16
 ### Added
 - Support for Bitfenix:
     * [Trades](https://docs.bitfinex.com/reference#rest-public-trades)
@@ -24,7 +21,7 @@
         - `bfx_feth()` - Get Bitfenix POST headers
 - Function `cryptocurr::status()` for displaying supported API statuses.
 
-## [0.0.1] - 2021-01-15
+## 0.0.1 - 2021-01-15
 ### Added
 - Initial commit and documentation.
 - Current support:
