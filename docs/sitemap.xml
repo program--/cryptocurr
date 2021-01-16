@@ -4,13 +4,25 @@
     <loc>https://github.com/program--/cryptocurr/index.html</loc>
   </url>
   <url>
+    <loc>https://github.com/program--/cryptocurr/reference/bfx_auth.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/program--/cryptocurr/reference/bfx_fetch.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/program--/cryptocurr/reference/get_status.html</loc>
   </url>
   <url>
     <loc>https://github.com/program--/cryptocurr/reference/pipe.html</loc>
   </url>
   <url>
+    <loc>https://github.com/program--/cryptocurr/reference/set_bfx_auth.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/program--/cryptocurr/reference/set_names.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/program--/cryptocurr/reference/status.html</loc>
   </url>
   <url>
     <loc>https://github.com/program--/cryptocurr/reference/ticker.html</loc>

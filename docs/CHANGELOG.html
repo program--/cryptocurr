@@ -6,15 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Bitfinex platform status — get_status • cryptocurr</title>
+<title>Changelog • cryptocurr</title>
 
 <!-- favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -25,8 +25,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
 <!-- bootstrap-toc -->
-<link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script>
+<link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
@@ -40,14 +40,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script>
+<link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Get Bitfinex platform status — get_status" />
-<meta property="og:description" content="Calls the Bitfinex API to determine platform operative status." />
+<meta property="og:title" content="Changelog" />
 <meta property="og:image" content="https://github.com/program--/cryptocurr/logo.png" />
 
 
@@ -67,7 +66,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -79,7 +78,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">cryptocurr</a>
+        <a class="navbar-link" href="index.html">cryptocurr</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2</span>
       </span>
     </div>
@@ -87,13 +86,13 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
+  <a href="index.html">
     <span class="fa fa-home"></span>
      
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">
+  <a href="reference/index.html">
     <span class="fa fa-file-code-o"></span>
      
     References
@@ -118,38 +117,96 @@
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-    <h1>Get Bitfinex platform status</h1>
-    <small class="dont-index">Source: <a href='https://github.com/program--/cryptocurr/blob/master/R/bitfinex-public.R'><code>R/bitfinex-public.R</code></a></small>
-    <div class="hidden name"><code>get_status.Rd</code></div>
+      <h1>Changelog</h1>
     </div>
 
-    <div class="ref-description">
-    <p>Calls the Bitfinex API to determine platform operative status.</p>
-    </div>
+<div id="changelog" class="section level1">
 
-    <pre class="usage"><span class='fu'>get_status</span><span class='op'>(</span><span class='op'>)</span></pre>
+<div id="unreleased" class="section level2">
+<h2 class="hasAnchor">
+<a href="#unreleased" class="anchor"></a>[Unreleased]</h2>
+<div id="planned" class="section level3">
+<h3 class="hasAnchor">
+<a href="#planned" class="anchor"></a>Planned</h3>
+<ul>
+<li>Bitfenix:
+<ul>
+<li><a href="https://docs.bitfinex.com/reference#rest-public-book">Book</a></li>
+<li><a href="https://docs.bitfinex.com/reference#rest-public-stats1">Stats</a></li>
+<li><a href="https://docs.bitfinex.com/reference#rest-public-candles">Candles</a></li>
+<li>…Remaining Public Endpoints</li>
+<li>Calculation Endpoints</li>
+<li>Authenticated Endpoints</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+</div>
+</div>
+<div id="002---2021-01-16" class="section level2">
+<h2 class="hasAnchor">
+<a href="#002---2021-01-16" class="anchor"></a>[0.0.2] - 2021-01-16</h2>
+<div id="added" class="section level3">
+<h3 class="hasAnchor">
+<a href="#added" class="anchor"></a>Added</h3>
+<ul>
+<li>Support for Bitfenix:
+<ul>
+<li><a href="https://docs.bitfinex.com/reference#rest-public-trades">Trades</a></li>
+<li>POST Authentication Helper Functions
+<ul>
+<li>
+<code><a href="reference/bfx_auth.html">bfx_auth()</a></code> - Get Bitfenix API Keys from Env. Variables.</li>
+<li>
+<code><a href="reference/set_bfx_auth.html">set_bfx_auth()</a></code> - Set Bitfenix API Keys</li>
+<li>
+<code>bfx_feth()</code> - Get Bitfenix POST headers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Function <code><a href="reference/status.html">cryptocurr::status()</a></code> for displaying supported API statuses.</li>
+</ul>
+</div>
+</div>
+<div id="001---2021-01-15" class="section level2">
+<h2 class="hasAnchor">
+<a href="#001---2021-01-15" class="anchor"></a>[0.0.1] - 2021-01-15</h2>
+<div id="added-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#added-1" class="anchor"></a>Added</h3>
+<ul>
+<li>Initial commit and documentation.</li>
+<li>Current support:
+<ul>
+<li>Bitfenix
+<ul>
+<li><a href="https://docs.bitfinex.com/reference#rest-public-platform-status">Platform Status</a></li>
+<li><a href="https://docs.bitfinex.com/reference#rest-public-tickers">Tickers</a></li>
+<li><a href="https://docs.bitfinex.com/reference#rest-public-ticker">Ticker</a></li>
+<li><a href="https://docs.bitfinex.com/reference#tickers-history">Tickers History</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
 
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Either "Operative" if platform is usable, or "Maintenace".</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'>get_status</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-    <span class='co'># Output:</span>
-    <span class='co'># [1] "Operative"</span>
-<span class='op'>}</span>
-</div></pre>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
+
 
 
       <footer>

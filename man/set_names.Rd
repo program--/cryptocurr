@@ -7,6 +7,6 @@
 set_names(ticker_info_get)
 }
 \description{
-Set ticker tibble colnames (Bitfenix)
+See \code{\link{ticker}} and \code{\link{tickers}}.
 }
 \keyword{internal}

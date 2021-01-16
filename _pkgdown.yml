@@ -4,13 +4,22 @@ template:
   params:
     bootswatch: flatly
 reference:
-  - title: Bitfinex
+  - title: General Utilities
+    contents:
+      - '`status`'
+  - title: Bitfinex Public
     contents:
       - '`get_status`'
       - '`tickers`'
       - '`ticker`'
       - '`ticker_history`'
       - '`trades`'
+  - title: Bitfinex Utils
+    contents:
+      - '`bfx_auth`'
+      - '`set_bfx_auth`'
+      - '`bfx_fetch`'
+      - '`set_names`'
 navbar:
   left:
     - icon: fa-home

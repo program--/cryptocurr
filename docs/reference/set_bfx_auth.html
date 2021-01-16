@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get Bitfinex platform status — get_status • cryptocurr</title>
+<title>Set Bitfenix API Keys — set_bfx_auth • cryptocurr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Get Bitfinex platform status — get_status" />
-<meta property="og:description" content="Calls the Bitfinex API to determine platform operative status." />
+<meta property="og:title" content="Set Bitfenix API Keys — set_bfx_auth" />
+<meta property="og:description" content="Set Bitfenix API Keys" />
 <meta property="og:image" content="https://github.com/program--/cryptocurr/logo.png" />
 
 
@@ -120,29 +120,34 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get Bitfinex platform status</h1>
-    <small class="dont-index">Source: <a href='https://github.com/program--/cryptocurr/blob/master/R/bitfinex-public.R'><code>R/bitfinex-public.R</code></a></small>
-    <div class="hidden name"><code>get_status.Rd</code></div>
+    <h1>Set Bitfenix API Keys</h1>
+    <small class="dont-index">Source: <a href='https://github.com/program--/cryptocurr/blob/master/R/bitfinex-utils.R'><code>R/bitfinex-utils.R</code></a></small>
+    <div class="hidden name"><code>set_bfx_auth.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calls the Bitfinex API to determine platform operative status.</p>
+    <p>Set Bitfenix API Keys</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_status</span><span class='op'>(</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>set_bfx_auth</span><span class='op'>(</span><span class='va'>API_KEY</span>, <span class='va'>API_SECRET</span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>API_KEY</th>
+      <td><p>Bitfenix API key</p></td>
+    </tr>
+    <tr>
+      <th>API_SECRET</th>
+      <td><p>Bitfenix API Secret key</p></td>
+    </tr>
+    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Either "Operative" if platform is usable, or "Maintenace".</p>
+    <p><code>TRUE</code> if keys were set.</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'>get_status</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-    <span class='co'># Output:</span>
-    <span class='co'># [1] "Operative"</span>
-<span class='op'>}</span>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

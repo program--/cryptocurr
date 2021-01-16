@@ -45,3 +45,5 @@ library(cryptocurr)
 ## Roadmap
 
 <img src="man/figures/cryptocurr-roadmap.png" alt="cryptocurr roadmap" align="center" />
+
+## [Changelog](CHANGELOG.md)
