@@ -24,9 +24,10 @@ bfx_auth <- function() {
 #' @title Set Bitfenix API Keys
 #' @param API_KEY Bitfenix API key
 #' @param API_SECRET Bitfenix API Secret key
+#' @param suppress Suppresses output if TRUE
 #' @return `TRUE` if keys were set.
 #' @export
-set_bfx_auth <- function(API_KEY, API_SECRET) {
+set_bfx_auth <- function(API_KEY, API_SECRET, suppress = FALSE) {
     if (missing(API_KEY) | missing(API_SECRET))
         stop("set_bfx_auth() requires both API_KEY and API_SECRET.")
 
@@ -34,10 +35,13 @@ set_bfx_auth <- function(API_KEY, API_SECRET) {
         BFX_APIKEY = API_KEY,
         BFX_SECRET = API_SECRET
     )
-    cat(
-        "BFX_APIKEY set to:\n\t", API_KEY, "\n",
-        "BFX_SECRET set to:\n\t", API_SECRET, "\n"
-    )
+
+    if (!suppress) {
+        cat(
+            "BFX_APIKEY set to:\n\t", API_KEY, "\n",
+            "BFX_SECRET set to:\n\t", API_SECRET, "\n"
+        )
+    }
 
     TRUE
 }

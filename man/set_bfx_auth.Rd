@@ -4,12 +4,14 @@
 \alias{set_bfx_auth}
 \title{Set Bitfenix API Keys}
 \usage{
-set_bfx_auth(API_KEY, API_SECRET)
+set_bfx_auth(API_KEY, API_SECRET, suppress = FALSE)
 }
 \arguments{
 \item{API_KEY}{Bitfenix API key}
 
 \item{API_SECRET}{Bitfenix API Secret key}
+
+\item{suppress}{Suppresses output if TRUE}
 }
 \value{
 \code{TRUE} if keys were set.
