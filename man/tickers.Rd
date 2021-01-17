@@ -13,8 +13,8 @@ Must be prepended with a \code{t} or \code{f} to specify
 trading or funding cryptocurrencies, respectively.}
 }
 \value{
-A \code{list} with \code{tibble} attributes:
-\code{funding} and \code{trading}. See details.
+A \code{list} with \link[tibble:tibble-package]{tibble}
+attributes: \code{funding} and \code{trading}. See details.
 }
 \description{
 Calls the Bitfinex API to retrieve cryptocurrency data.
@@ -51,7 +51,7 @@ the Flash Return Rate \emph{(funding tickers only)}
     # and $funding tibble with 0 rows
 
     # Get USD info
-    tickers(SYMBOLS = "USD")
+    tickers(SYMBOLS = "fUSD")
     # Return $trading tibble with 0 rows
     # and $funding tibble with 1 row
 }

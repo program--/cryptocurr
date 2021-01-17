@@ -13,7 +13,8 @@ cryptocurrency. Must be prepended with a \code{t} or
 cryptocurrencies, respectively.}
 }
 \value{
-A \code{tibble}. See details for column names.
+A \link[tibble:tibble-package]{tibble}.
+See details for column names.
 }
 \description{
 Calls the Bitfinex API to retrieve cryptocurrency data

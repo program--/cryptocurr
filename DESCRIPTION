@@ -1,7 +1,7 @@
 Package: cryptocurr
 Type: Package
 Title: R-based Cryptocurrency Platform API Wrapper
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     person(given = "Justin",
            family = "Singh-Mohudpur",
@@ -28,4 +28,7 @@ Imports:
     dplyr,
     purrr,
     jsonlite,
-    openssl
+    openssl,
+    lifecycle,
+    rlang
+RdMacros: lifecycle

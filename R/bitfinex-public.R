@@ -27,8 +27,8 @@ get_status <- function() {
 #'                cryptocurrencies, or \code{ALL} for all possible tickers.
 #'                Must be prepended with a \code{t} or \code{f} to specify
 #'                trading or funding cryptocurrencies, respectively.
-#' @return A \code{list} with \code{tibble} attributes:
-#'         \code{funding} and \code{trading}. See details.
+#' @return A \code{list} with [tibble][tibble::tibble-package]
+#'         attributes: \code{funding} and \code{trading}. See details.
 #' @details
 #' ### `tibble` descriptions:
 #' * `SYMBOL`: The symbol/ticker of the requested data
@@ -58,7 +58,7 @@ get_status <- function() {
 #'     # and $funding tibble with 0 rows
 #'
 #'     # Get USD info
-#'     tickers(SYMBOLS = "USD")
+#'     tickers(SYMBOLS = "fUSD")
 #'     # Return $trading tibble with 0 rows
 #'     # and $funding tibble with 1 row
 #' }
@@ -85,22 +85,21 @@ tickers <- function(SYMBOLS = c("ALL")) {
 
     funding <- trading <- tibble::tibble()
 
-    lapply(
-        api_call,
-        FUN = function(x) {
-            currency <- set_names(x)
+    tickers_info <- function(x) {
+        currency <- set_names(x)
 
-            if (substr(currency[[1]][1], 1, 1) == "t") {
-                trading <<- trading %>%
-                            dplyr::bind_rows(currency)
-            } else {
-                funding <<- funding %>%
-                            dplyr::bind_rows(currency)
-            }
-
-            TRUE
+        if (substr(currency[[1]][1], 1, 1) == "t") {
+            trading <<- trading %>%
+                        dplyr::bind_rows(currency)
+        } else {
+            funding <<- funding %>%
+                        dplyr::bind_rows(currency)
         }
-    )
+
+        TRUE
+    }
+
+    lapply(api_call, tickers_info)
 
     info <- list()
     info$funding <- funding
@@ -116,7 +115,8 @@ tickers <- function(SYMBOLS = c("ALL")) {
 #'               cryptocurrency. Must be prepended with a \code{t} or
 #'               \code{f} to specify trading or funding
 #'               cryptocurrencies, respectively.
-#' @return A \code{tibble}. See details for column names.
+#' @return A [tibble][tibble::tibble-package].
+#'         See details for column names.
 #' @details
 #' ### `tibble` descriptions:
 #' * `SYMBOL`: The symbol/ticker of the requested data
@@ -174,7 +174,7 @@ ticker <- function(SYMBOL = "tBTCUSD") {
 #' @param start Millisecond start time
 #' @param end Millisecond end time
 #' @param limit Number of records (Max 250)
-#' @return A \code{tibble}. See details for column names.
+#' @return A [tibble][tibble::tibble-package]. See details for column names.
 #' @details
 #' ### `tibble` descriptions:
 #' * `SYMBOL`: The symbol/ticker of the requested data
@@ -194,6 +194,7 @@ ticker <- function(SYMBOL = "tBTCUSD") {
 #'     # Return $trading tibble with 0 rows
 #'     # and $funding tibble with 1 row
 #' }
+#' @importFrom rlang .data
 #' @export
 ticker_history <- function(SYMBOLS = c("ALL"), start, end, limit) {
     bit_url <- "https://api-pub.bitfinex.com/v2/tickers/hist"
@@ -202,21 +203,14 @@ ticker_history <- function(SYMBOLS = c("ALL"), start, end, limit) {
                       paste(SYMBOLS, collapse = ","))
 
     if (!missing(start)) paste0(query, "&start=", start)
-
-    if (!missing(end)) paste0(query, "&end=", end)
-
+    if (!missing(end))   paste0(query, "&end=", end)
     if (!missing(limit)) {
         if (limit > 250) stop('"limit" must be <= 250 for history call.')
         paste0(query, "&limit=", limit)
     }
 
     api_call <- httr::GET(query)
-
-    httr::stop_for_status(
-        api_call,
-        task = paste("get symbol", SYMBOLS)
-    )
-
+    httr::stop_for_status(api_call, paste("get symbol", SYMBOLS))
     api_call <- httr::content(api_call)
 
     if (length(api_call) == 0) {
@@ -228,25 +222,25 @@ ticker_history <- function(SYMBOLS = c("ALL"), start, end, limit) {
 
     info <- tibble::tibble()
 
-    lapply(
-        api_call,
-        FUN = function(x) {
-            ticker_info <- unlist(x) %>%
-                           t() %>%
-                           as.data.frame() %>%
-                           tibble::as_tibble() %>%
-                           setNames(c("SYMBOL", "BID", "ASK", "MTS"))
+    history_info <- function(x) {
+        ticker_info <- unlist(x) %>%
+                       t() %>%
+                       as.data.frame() %>%
+                       tibble::as_tibble() %>%
+                       setNames(c("SYMBOL", "BID", "ASK", "MTS")) %>%
+                       dplyr::mutate(MTS = as.character(.data$MTS))
 
-            ticker_info[-1] <- ticker_info[-1] %>%
-                               dplyr::mutate(
-                                   dplyr::across(.fns = as.numeric)
-                               )
+        ticker_info[-1] <- ticker_info[-1] %>%
+                           dplyr::mutate(
+                               dplyr::across(.fns = as.numeric)
+                           )
 
-            info <<- dplyr::bind_rows(info, ticker_info)
+        info <<- dplyr::bind_rows(info, ticker_info)
 
-            TRUE
-        }
-    )
+        TRUE
+    }
+
+    lapply(api_call, history_info)
 
     info
 }
@@ -261,7 +255,7 @@ ticker_history <- function(SYMBOLS = c("ALL"), start, end, limit) {
 #' @param start Millisecond start time
 #' @param end Millisecond end time
 #' @param limit Number of records (Max 10000)
-#' @return A \code{tibble}. See details for column names.
+#' @return A [tibble][tibble::tibble-package]. See details for column names.
 #' @details
 #' ### `tibble` descriptions:
 #' * `SYMBOL`: The symbol/ticker of the requested data
@@ -281,6 +275,7 @@ ticker_history <- function(SYMBOLS = c("ALL"), start, end, limit) {
 #'     # Get USD trades info
 #'     trades(SYMBOL = "USD")
 #' }
+#' @importFrom rlang .data
 #' @export
 trades <- function(SYMBOL = "tBTCUSD", start, end, limit) {
     query <- paste0("https://api-pub.bitfinex.com/v2/trades/",
@@ -299,12 +294,7 @@ trades <- function(SYMBOL = "tBTCUSD", start, end, limit) {
     if (!missing(end))   query <- paste0(query, "&end=",   end)
 
     api_call <- httr::GET(query)
-
-    httr::stop_for_status(
-        api_call,
-        task = paste("get symbol", SYMBOL)
-    )
-
+    httr::stop_for_status(api_call, paste("get symbol", SYMBOL))
     api_call <- httr::content(api_call)
 
     if (length(api_call) == 0) {
@@ -316,25 +306,32 @@ trades <- function(SYMBOL = "tBTCUSD", start, end, limit) {
 
     info <- tibble::tibble()
 
-    lapply(
-        api_call,
-        FUN = function(x) {
-            trade_info <- unlist(x) %>%
-                          t() %>%
-                          as.data.frame() %>%
-                          tibble::as_tibble() %>%
-                          setNames(c("ID", "MTS", "AMOUNT",
-                                     "PRICE", "RATE", "PERIOD")) %>%
-                          sapply(as.numeric) %>%
-                          as.data.frame() %>%
-                          tibble::as_tibble() %>%
-                          dplyr::mutate(SYMBOL = SYMBOL)
+    trades_info <- function(x) {
+        tnames <- c("SYMBOL", "ID", "MTS", "AMOUNT", "PRICE")
+        fnames <- c("SYMBOL", "ID", "MTS", "AMOUNT", "RATE", "PERIOD")
 
-            info <<- dplyr::bind_rows(info, trade_info)
+        trade_info <- unlist(x) %>%
+                      t() %>%
+                      as.data.frame() %>%
+                      lapply(as.numeric) %>%
+                      tibble::as_tibble() %>%
+                      dplyr::mutate(
+                          V2 = as.character(.data$V2),
+                          SYMBOL = SYMBOL
+                      ) %>%
+                      dplyr::relocate(SYMBOL)
 
-            TRUE
-        }
-    )
+        if (substr(SYMBOL, 1, 1) == "t")
+            trade_info <- setNames(trade_info, tnames)
+        else
+            trade_info <- setNames(trade_info, fnames)
+
+        info <<- dplyr::bind_rows(info, trade_info)
+
+        TRUE
+    }
+
+    lapply(api_call, trades_info)
 
     info
 }

@@ -10,6 +10,16 @@
     * Calculation Endpoints
     * Authenticated Endpoints
 
+## 0.0.3 - 2021-01-16
+### Added
+- Unit tests for Bitfenix functions
+    * `get_status()`
+    * `tickers()`
+    * `ticker()`
+    * `ticker_history()`
+    * `trades()`
+- GitHub Actions for R CMD Checks, PR, and `pkgdown`
+- API Platform Statuses: `status()`
 
 ## 0.0.2 - 2021-01-16
 ### Added
