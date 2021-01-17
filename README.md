@@ -5,7 +5,6 @@
 [![Build Status](https://travis-ci.com/program--/cryptocurr.svg?branch=master)](https://travis-ci.com/program--/cryptocurr)
 [![R build status](https://github.com/program--/cryptocurr/workflows/R-CMD-check/badge.svg)](https://github.com/program--/cryptocurr/actions)
 [![Codecov test coverage](https://codecov.io/gh/program--/cryptocurr/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/cryptocurr)
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
