@@ -99,8 +99,8 @@ test_that("Bitfinex ticker() works", {
     expect_true(nrow(test_value2) == 1)
 
     # Check that ticker() and ticker("fUSD") return the correct tickers
-    expect_equal(test_value[[1]], "tBTCUSD")
-    expect_equal(test_value2[[1]], "fUSD")
+    expect_equal(as.character(test_value[[1]]), "tBTCUSD")
+    expect_equal(as.character(test_value2[[1]]), "fUSD")
 
     # Check that column names match trading/funding names
     expect_identical(names(test_value), trading_names)
@@ -131,7 +131,7 @@ test_that("Bitfinex ticker_history() works", {
 
     # Check that a call gives correct ticker
     expect_equal(
-        unique(ticker_history(SYMBOLS = "tBTCUSD")$SYMBOL),
+        as.character(unique(ticker_history(SYMBOLS = "tBTCUSD")$SYMBOL)),
         "tBTCUSD"
     )
 })
